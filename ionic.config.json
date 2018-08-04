@@ -1,0 +1,8 @@
+{
+  "name": "can2.0customer",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
