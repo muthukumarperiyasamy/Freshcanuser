@@ -1,0 +1,49 @@
+page-offers {
+    .nomsg{
+        p{
+            padding-top:15px !important;
+        }
+        text-align: center;
+        font-size: 1.5rem;
+        border-radius: 15px  !important;
+        background-color:$theme-color-1; 
+        color:#fff;   
+        height:55px;
+        margin: 15px;
+        
+    }
+    .list
+    {
+        // background: grey;
+        ion-card-content{
+            p
+            {
+                  font-size:12px;
+                //   padding-left:15px;
+            }
+        }
+        .details
+        {
+            display: flex;
+            ion-icon
+            {
+                color:$theme-color-2;
+            }
+         p
+          {
+                font-size:10px;
+                padding-left:15px;
+          }
+        }
+        .button-md{
+            background-color: orange;
+            padding: 1px;
+        }
+        .note
+        {
+        //  align-self: right;
+            font-size:10px;
+            color:$black;
+        }
+    }
+}

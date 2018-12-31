@@ -1,0 +1,44 @@
+page-contact {
+    .content{
+        // background-color:$theme-color-1;
+    }  
+    .contact-description
+    {
+        text-align: justify !important;
+        margin: 8px 0px 0px;
+        color:  $theme-color-3;
+        font-weight:800;
+        // background-color: $white-b;
+    }
+.contact-details-row
+{
+    // background:  $theme-color-2;
+    color:  $theme-color-3;
+    padding: 16px;
+
+    .contact-name
+    {
+        margin: 0px;
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    .contact-description
+    {
+        margin: 8px 0px 0px;
+        color:  $theme-color-3;
+    }
+    ion-icon{
+        padding-right:0px;
+        padding-left: 25px;
+        font-size: 1.9em !important;
+    } 
+}
+.button-bar{
+    text-align: center;
+    background: white;  
+    ion-icon{
+        font-size: 2.7em !important;
+        padding: 25px; 
+    }
+} 
+}

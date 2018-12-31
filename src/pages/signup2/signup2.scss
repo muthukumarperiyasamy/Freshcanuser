@@ -1,0 +1,82 @@
+page-signup2 {
+	ion-header{
+        .toolbar-background
+        {
+            border: none !important;
+            background-color: transparent;
+        }
+    
+        .toolbar-title,
+        .back-button,
+        .bar-button
+        {
+            color: $black;
+        }
+    }
+    .checkbox1{
+        padding-top:35px;
+      }
+      .checkbox2{
+        // padding-top:35px;
+        width:85%;
+        padding-left:10%;
+      }
+.signup-content
+{ 
+    background-image: url("../assets/images/22.jpg");
+    background-size: cover;
+    // background-color:rgba(72, 139, 255, 0.37) !important;
+.signup-form{
+        padding-top:35px !important;
+        padding:15px;
+        .button{
+            border-color: $white !important;
+            border-width: 3px !important;
+            color:$white;
+        }
+        
+    }
+    .title{
+        padding-top: 45px;
+    }
+    .legal-stuff
+    {
+        color: $black-b;
+        text-align: center;
+        margin: 10px 12px;
+        font-size: 10px;
+        .legal-action
+        {
+            font-weight: 500;
+            color: $theme-color-2;
+        }
+    }
+}
+ion-item {
+border-radius: 30px !important;
+padding-left: 30px !important;
+font-size: 0.9em;
+background-color:rgba(0, 0, 0, 0.5) !important;
+// background-color:rgb(255, 255, 255) !important;
+margin-bottom: 10px !important;
+border-bottom: 0px !important;
+color: $white !important;
+}
+input::placeholder{
+color: $white !important;
+}
+textarea::placeholder{
+color: $white !important;
+}
+
+ion-input{
+margin: 0 auto;
+text-align:center;
+}
+.item.item-md .checkbox-md{
+  margin: 9px 7px 9px 0px;
+}
+}
+.item-md.item-block .item-inner{
+border-bottom:none;
+}

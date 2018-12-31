@@ -14,3 +14,30 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+@import "../theme/common";
+.toast-md .toast-message {
+    padding: 19px 16px 17px;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: $theme-color-1;
+}
+// .alert-md .alert-wrapper{
+//     .alert-head{
+//         background-color: $theme-color-1;
+//         .alert-title{
+//               color: #fff;
+//         }
+//     }
+//    .alert-message
+//    {
+//     background-color: $theme-color-4;
+//     color: #fff;
+//    }
+//    .alert-button-group{
+//     background-color: $theme-color-4;
+//     .alert-button{
+//         color: #fff;
+//     }
+//    }
+    
+// }

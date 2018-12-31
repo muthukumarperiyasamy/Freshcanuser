@@ -1,0 +1,36 @@
+page-otppage {
+     .otp{
+         color:floralwhite; 
+         background-image: url("../assets/images/otp.jpg");
+     }
+     ion-item {
+		border-radius: 30px !important;
+		padding-left: 30px !important;
+		font-size: 0.9em;
+		background-color:rgba(255,255,255,0.3) !important;
+		margin-bottom: 10px !important;
+		border-bottom: 0px !important;
+		color: $white !important;
+	}
+	input::placeholder{
+		color: $white !important;
+	}
+
+	
+	ion-input{
+	margin: 0 auto;
+	text-align:center;
+	}
+     
+          .otbutton
+          {
+            // .button{
+				border-color: $white !important;
+				border-width: 3px !important;
+				color:$white;
+			// }  
+          }
+          
+      
+     
+}

@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> Hot Offers</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="nomsg" *ngIf="this.items.length == 0 ">
+    <p>No Offers From Your Shop</p>
+  </div>
+  <ion-list>
+    <!-- <ion-item *ngFor="let item of items ">
+     <b> {{item.title}} </b>
+      <br>
+      <img src={{item.image_url}} >
+      <ion-buttons end>                  
+          <button ion-button color="primary" (click)="buy(item)">Apply Now</button>
+        </ion-buttons>
+    </ion-item> -->
+    <ion-card class="list" *ngFor="let item of items ">
+
+      <!-- <ion-item>
+        <ion-row>
+          <ion-col col-2>
+            <ion-avatar item-start>
+              <img src={{item.long_img_url}}>
+            </ion-avatar>
+          </ion-col>
+          <ion-col col-10>
+            <h2>{{item.post}}</h2>
+            <p>{{item.date}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-item> -->
+
+      <img padding src={{item.offers_images}}>
+
+      <ion-card-content>
+        <p wrap-text>{{item.description}}</p>
+      </ion-card-content>
+
+      <!-- <ion-row>
+        <div >
+          <ion-col>
+            <ion-icon name="cash"></ion-icon>
+            <p> RS. {{item.price}}</p>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="color-wand"></ion-icon>
+            <p>{{item.validity}}</p>
+          </ion-col>
+        </div>
+        <div>
+          <ion-col center text-center>
+            <button ion-button icon-left small>
+              Buy
+            </button>
+        </ion-col>
+        </div>
+      </ion-row> -->
+      <ion-grid>
+        <ion-row>
+          <ion-col width-70>
+            <div class="details">
+              <ion-icon name="cash"></ion-icon>
+              <p> &#8377; <b>{{item.product_prize}}</b></p>
+              <br>
+              </div>
+              <div class="details">    
+              <ion-icon class="fa fa-calendar"></ion-icon>
+              <p>{{item.valid_to}}</p>
+            </div>
+          </ion-col>
+          <ion-col width-30>
+            <div >
+              <button ion-button ion-button item-right (click)="showPrompt(item)">
+                Buy Now
+              </button>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-item>
+        <ion-note item-right class="note">{{item.date}}</ion-note>
+      </ion-item>
+      </ion-grid>
+    </ion-card>
+  </ion-list>
+</ion-content>

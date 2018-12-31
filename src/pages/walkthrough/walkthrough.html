@@ -1,0 +1,68 @@
+<ion-header class="walkthrough-header">
+  <ion-toolbar>
+    <ion-buttons end>
+      <button ion-button class="skip-button" (click)="skipIntro()" [hidden]="lastSlide">Skip</button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="walkthrough-content">
+  <ion-slides #slider (ionSlideDidChange)="onSlideChanged()" pager="true">
+    <ion-slide class="slide">
+      <ion-row class="intro-image-row">
+        <ion-col center width-64 no-padding>
+          <img src="./assets/images/screen-1.png" alt="slide 1 img" title="ion2FullApp">
+        </ion-col>
+      </ion-row>
+      <h5 class="main-title">Start your shopping</h5>
+      <!-- <p class="intro-text">
+          Get pure water easily at your doorstep with a single tap of button  at your convenient time.         
+      </p> -->
+    </ion-slide>
+    <ion-slide class="slide">
+      <ion-row class="intro-image-row">
+        <ion-col center width-64 no-padding>
+          <img src="./assets/images/screen-2.png" alt="slide 2 img" title="ion2FullApp">
+        </ion-col>
+      </ion-row>
+      <h5 class="main-title">Delivery <br>Starts from 15 mins</h5>
+      <!-- <p class="intro-text">
+          Book your watercan with just one click and stay hydrated!
+      </p>
+     -->
+    </ion-slide>
+    <!-- <ion-slide class="slide-3">
+      <ion-row class="intro-image-row">
+        <ion-col center width-64 no-padding>
+          <preload-image [ratio]="{w:1, h:1}" src="./assets/images/screen-1.png" alt="slide 3 img" title="ion2FullApp"></preload-image>
+        </ion-col>
+      </ion-row>
+      <h5 class="main-title">Get ready!</h5>
+      <p class="intro-text">
+        Soon your app will look and feel awesome!
+      </p>
+    </ion-slide> -->
+    <ion-slide class="slide">
+      <ion-row class="intro-image-row">
+        <ion-col center width-64 no-padding>
+          <img src="./assets/images/screen-3.png" alt="slide 3 img" title="ion2FullApp">
+        </ion-col>
+      </ion-row>
+      <h5 class="main-title">Cash on Delivery</h5>
+      <!-- <p class="intro-text">
+        We should get started.
+      </p> -->
+      <!-- <p class="intro-text">
+          We get to know your requirements and deliver at right time.
+      </p>
+      -->
+      <!-- <p class="intro-text">
+        We are ready to rock!
+      </p> -->
+      <div class="button-bar">
+        <button ion-button primary (click)="goToLogin()">Log in</button>
+        <button ion-button primary (click)="goToSignup()">Sign up</button>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

@@ -1,3 +1,116 @@
 page-home {
+    .contact-slides
+    {
+        height: 35%;
 
+        ion-slide.contact-slide
+        {
+            
+            .slide-zoom
+            {
+                height: 100%;
+            }
+        }
+
+        .slide-image
+        {
+            width: 100%;
+
+        }
+        .swiper-pagination
+        {
+            .swiper-pagination-bullet
+            {
+                opacity: 1;
+                background: white;
+                width: 10px;
+                height: 10px;
+            }
+
+            .swiper-pagination-bullet-active
+            {
+                background: $theme-color-2;
+            }
+        }
+    }
+    .contact-details-row
+    {
+        background: black;
+        color: white;
+        
+    }
+    .contact-details-row
+    {
+        background: black;
+        color: white;
+        
+    }
+    .divider
+    {
+        font-size: 1.2rem;
+        font-weight: 500;
+        letter-spacing: 0.9px;
+        color: $theme-color-3;
+        text-align: center;
+        &:not(:first-child)
+        {
+            padding-top: 30px;
+        }
+    }
+    .gros{
+        // border-radius: 80%;
+    }
+    img 
+    {
+        background-color: transparent;
+        display: block;
+        margin: 0 auto;
+    }
+    .qicon{
+    // padding-top:11px;
+    // padding-left:7px;
+    color:#fcfcfc;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 900;
+    background: $theme-color-1 !important;
+   
+    }
+    .text{
+    text-align:center;
+    }
+    .inputnum{
+    font-size: 1.7em;  
+    font-weight: 500; 
+    .text-input {
+        margin: 8px 5px 5px 12px;
+        width:100%;
+    }
+    }
+    .rows{
+    padding-top:25px;
+    }
+
+    .submit-button
+    {
+    font-weight: 500;
+    color: white;
+    background-color: $theme-color-1;
+    width:95%;
+    // align-items: center !important;
+     .button-inner
+      {
+         text-align: justify;
+     }
+    }
+    .span
+    {
+        margin-left:3em;
+    }
+}
+.toast-md .toast-message {
+    padding: 19px 16px 17px;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: $theme-color-1;
 }

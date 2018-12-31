@@ -1,19 +1,104 @@
-<ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-content>
+<ion-menu [content]="content" [swipeEnabled]="false" class="menu-content myBg">
+  <ion-content class="menu-content">
+    <div class="userinfo">
+      <ion-row>
+        <ion-col col-4>
+          <div class="logo"></div>
+        </ion-col>
+        <ion-col col-8>
+          <div class="info">
+            <p>{{this.username}}</p>
+            <p *ngIf="this.username == null">Welcome to Fresh Can</p>
+            <p>{{this.usermobile}}</p>
+            <p *ngIf="this.usermobile == null">Purity in Every Drops</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
+      <ion-list-header>
+        Dashboard
+      </ion-list-header>
+      <button class="menu-list" ion-item menuClose (click)="goHome()">
+        <ion-icon item-start name="md-home"></ion-icon>
+        Home
       </button>
     </ion-list>
-  </ion-content>
+    <ion-list>
+      <ion-list-header>
+        Your Orders
+      </ion-list-header>
+      <button *ngIf="this.canshopmobile !='null'" class="menu-list" ion-item menuClose (click)="Home()">
+        <ion-icon item-start name="md-home"></ion-icon>
+        Book Can
+      </button>
+      <button *ngIf="this.groceryshopmobile !='null'" class="menu-list" ion-item menuClose (click)="Grocery()">
+        <ion-icon item-start name="cart"></ion-icon>
+        Grocery
+      </button>
+      <button class="menu-list" ion-item menuClose (click)="Order()">
+        <ion-icon item-start class="fa fa-first-order"></ion-icon>
+        Order History
+      </button>
+      <!-- </ion-list>
+    <ion-list> -->
+      <button class="menu-list" ion-item menuClose (click)="notification()">
+        <ion-icon item-start name="notifications"></ion-icon>
+        Notifications
+      </button>
+      <button class="menu-list" ion-item menuClose (click)="Settings()">
+        <ion-icon item-start name="settings"></ion-icon>
+        Shop Settings
+      </button>
+      <button *ngIf="this.type =='true'" class="menu-list" ion-item menuClose (click)="offers()">
+        <ion-icon item-start name="color-wand"></ion-icon>
+        Offers
+      </button>
+    </ion-list>
+    <ion-list>
+      <ion-list-header>
+        My Account
+      </ion-list-header>
+      <button class="menu-list" ion-item menuClose (click)="profile()">
+        <ion-icon item-start name="ios-contact"></ion-icon>
+        My Profile
+      </button>
+      <button class="menu-list" ion-item menuClose (click)="changepassword()">
+        <ion-icon item-start name="md-create"></ion-icon>
+        Change Password
+      </button>
+      <!-- </ion-list> -->
 
+      <!-- <ion-list>
+      <ion-list-header>
+        UPdates
+      </ion-list-header>
+      <button menuClose ion-item *ngFor="let p of dynamic" (click)="InAppBrowser(p)">
+        <ion-icon name="md-star-outline" item-left></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list> -->
+      <!-- <ion-list> -->
+      <button class="menu-list" ion-item menuClose (click)="about()">
+        <ion-icon item-start name="ios-redo"></ion-icon>
+        About
+      </button>
+      <button class="menu-list" ion-item menuClose (click)="contact()">
+        <ion-icon item-start name="call"></ion-icon>
+        Connect with Us
+      </button>
+      <button class="menu-list" ion-item menuClose (click)="termsconditions()">
+        <ion-icon item-start name="ios-redo"></ion-icon>
+        Terms and Conditions
+      </button>
+      <ion-item>
+        <span item-right class="version">
+          V 0.0.4
+        </span>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
 </ion-menu>
 
-<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-nav [root]="rootPage" #content swipe-back-enabled="false"></ion-nav>

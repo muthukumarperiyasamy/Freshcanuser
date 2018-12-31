@@ -1,0 +1,109 @@
+login-page {
+	.login-content
+	{
+		background-image: url("../assets/images/22.jpg");
+		background-size: cover;
+		.logo {
+			margin-top: 25px;
+			width: 100px;
+			height: 100px;
+			margin: 20px auto 0;
+			border-radius: 10%;
+			background: url("../assets/images/logo.png") no-repeat;
+			background-size: 100%;
+		  }
+		  .animated
+		  {
+				  animation-duration: 1s;
+				  animation-fill-mode: both;
+		  }
+	  
+		  @keyframes fadeIn {
+		  from {
+			opacity: 0;
+		  }
+		
+		  to {
+			opacity: 1;
+		  }
+		}
+		
+		.fadeIn {
+		  animation-name: fadeIn;
+		}
+		
+		@keyframes fadeInDown {
+		  from {
+			opacity: 0;
+			transform: translate3d(0, -100%, 0);
+		  }
+		
+		  to {
+			opacity: 1;
+			transform: none;
+		  }
+		}
+		
+		.fadeInDown {
+		  animation-name: fadeInDown;
+		}
+		.login-form{
+		margin-top: 15%;
+		padding: 15px;
+		
+		.button{
+			border-color: $white !important;
+			border-width: 3px !important;
+			color:$white;
+		}
+
+		}
+	  
+		.alt-options
+		{
+		padding: 15px;
+			.button
+			{
+				margin: 0px;
+				padding: 0px;
+				font-size: 1.4rem;
+			}
+
+			.forgot-button
+			{
+				color: $black;
+
+				.button-inner
+				{
+				justify-content:flex-start;
+				}
+			}
+
+			.signup-button
+			{
+				font-weight: 500;
+				color: $black !important;
+				.button-inner
+				{
+				justify-content:flex-end;
+				}
+			}
+		}
+	ion-item {
+				 border-radius: 30px !important;
+         padding-left: 30px !important;
+         font-size: 1.4rem;
+				 background-color:rgba(0, 0, 0, 0.5) !important;
+         margin-bottom: 10px !important;
+         border-bottom: 0px !important;
+			   color: $white !important;
+	}
+		input::placeholder{
+			color: $white !important;
+		}
+}
+ion-input{
+		margin: 0 auto;
+		text-align:center;
+}
+}

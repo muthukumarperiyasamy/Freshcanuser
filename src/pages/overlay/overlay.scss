@@ -1,0 +1,48 @@
+page-overlay {
+
+    .main-view{
+        background: transparent;
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0.8;
+        background-color: #47281f;
+      }
+      
+      .modal_content {
+        position: absolute;
+        top: calc(33% - (32%/2));
+        left: 0;
+        right: 0;
+        width: 90%;
+        height:72%;
+        margin: 0 auto;
+        // background: -moz-linear-gradient(top, #fff 0%, #e8e8e8 100%);
+        // background: -webkit-linear-gradient(top, #fff 0%, #e8e8e8 100%);
+        // background: linear-gradient(to bottom, #fff 0%, #e8e8e8 100%);
+        border-radius: 5px;
+        // box-shadow: 0 2px 3px rgba(51, 51, 51, .35);
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        .overlay{
+        //    background-image: url("http://www.freshcangrocery.in/images/user_slider_1.jpg");
+        //    background-size: cover;  
+        }
+        .item-md{
+            background-color: transparent;
+            color:$white;
+        }
+        [icon-only] ion-icon{
+                padding:0px;
+         }
+         .item-md [item-end] 
+         {
+         margin: 9px 0px 9px 0; 
+         }
+    }
+}

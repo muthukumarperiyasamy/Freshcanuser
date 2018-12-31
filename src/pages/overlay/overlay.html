@@ -1,0 +1,22 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>overlay</ion-title>
+  </ion-navbar> 
+</ion-header>
+-->
+
+<ion-content class="main-view">
+  <div class="overlay" (click)="dismiss()"> </div>
+
+  <ion-scroll class="modal_content" scrollY="true">
+    <div>
+      <button ion-item clear  icon-only  (click)="dismiss()">
+        <ion-icon item-end name="close-circle"></ion-icon>
+      </button>
+    </div>
+    <div text-center>
+      <img src="http://www.freshcangrocery.in/images/overlay.png" class="image">
+    </div>
+  </ion-scroll>
+
+</ion-content>

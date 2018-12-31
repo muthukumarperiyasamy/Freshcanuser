@@ -1,0 +1,21 @@
+page-orders {
+    .label{
+        margin:0;
+    }
+    .details{
+        border-radius: 5px 5px 5px 5px;
+        border-left: 3px solid $theme-color-4;
+        border-right: 3px solid $theme-color-4;
+        border-bottom: 1px solid $grey;
+    }
+    .heading{
+        background-color: $grey;
+        border-radius: 5px 5px 5px 5px;
+        margin:9px 0px 9px 0px ; 
+        // margin-right: 9px !important;
+        padding-right:9px;   
+    }
+    .price{
+        padding-right:20px;
+    }
+}

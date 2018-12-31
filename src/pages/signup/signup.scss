@@ -1,0 +1,67 @@
+signup-page {
+		ion-header{
+			.toolbar-background
+			{
+				border: none !important;
+				background-color: transparent;
+			}
+		
+			.toolbar-title,
+			.back-button,
+			.bar-button
+			{
+				color: $black;
+			}
+		}
+	.signup-content
+	{ 
+		background-image: url("../assets/images/22.jpg");
+		background-size: cover;
+		.signup-form{
+			padding-top:35px !important;
+			padding:15px;
+			.button{
+				border-color: $white !important;
+				border-width: 3px !important;
+				color:$white;
+			}
+		}
+		
+		.legal-stuff
+		{
+			color: $black-b;
+			text-align: center;
+			margin: 10px 12px;
+
+			.legal-action
+			{
+				font-weight: 500;
+				color: $theme-color-2;
+			}
+		}
+	}
+ion-item {
+	border-radius: 30px !important;
+	padding-left: 30px !important;
+	font-size: 0.9em;
+	background-color:rgba(0, 0, 0, 0.5) !important;
+	// background-color:rgb(255, 255, 255) !important;
+	margin-bottom: 10px !important;
+	border-bottom: 0px !important;
+	color: $white !important;
+}
+input::placeholder{
+	color: $white !important;
+}
+textarea::placeholder{
+	color: $white !important;
+}
+
+ion-input{
+margin: 0 auto;
+text-align:center;
+}
+}
+.item-md.item-block .item-inner{
+	border-bottom:none;
+}

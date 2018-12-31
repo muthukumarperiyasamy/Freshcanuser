@@ -1,0 +1,400 @@
+<ion-header>
+  <ion-toolbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Grocery</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="cart()">
+        <ion-icon class="cart" name="cart"></ion-icon>
+        <ion-badge *ngIf="show()" id="notifications-badge" color="danger">{{notification()}}</ion-badge>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item no-margin no-padding>
+    <h5 text-center>
+      <b>Rise & Shine, it's Offer time</b>
+    </h5>
+    <ion-row>
+      <ion-slides spaceBetween="3" class="category" slidesPerView="3">
+        <ion-slide (click)="product('Trending','Trending offers')">
+          <img  class="offersimg" src="assets/images/1.jpg">
+          <p text-wrap>Trending</p>
+        </ion-slide>
+        <ion-slide (click)="product('Discount','Discount offers')">
+          <img  class="offersimg" src="assets/images/7.jpg">
+          <p text-wrap>Discount</p>
+        </ion-slide>
+        <ion-slide (click)="product('Premium','Premium offers')">
+          <img  class="offersimg" src="assets/images/3.jpg">
+          <p text-wrap>Premium</p>
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+  </ion-item>
+
+  <ion-item no-margin no-padding>
+    <h5 text-center>
+      <b>Bakery</b>
+    </h5>
+    <ion-row>
+      <!-- <ion-col col-1>
+          <ion-icon name="arrow-back" class="btnPrev" (click)="prev()"></ion-icon>
+        </ion-col>-->
+      <!-- <ion-col col-11>  -->
+      <ion-slides pager="true" spaceBetween="4" class="category" slidesPerView="3.5">
+        <ion-slide (click)="product('Dairy','Diary')">
+          <img src="assets/icon/Dairy.svg">
+          <p text-wrap>Dairy</p>
+        </ion-slide>
+        <ion-slide (click)="product('Dairy_Cheese','Dairy & Cheese')">
+          <img src="assets/icon/Dairy & Cheese.svg">
+          <p text-wrap>Dairy & Cheese</p>
+        </ion-slide>
+        <ion-slide (click)="product('Cookies_Rusk_Khari','Cookies, Rusk & Khari')">
+          <img src="assets/icon/Cookies, Rusk & Khari.svg">
+          <p text-wrap>Cookies, Rusk & Khari</p>
+        </ion-slide>
+        <ion-slide (click)="product('Cakes_Pastries','Cakes & Pastries')">
+          <img src="assets/icon/Cakes & Pastries.svg">
+          <p text-wrap>Cakes & Pastries</p>
+        </ion-slide>
+        <ion-slide (click)="product('Breads_Buns','Breads & Buns')">
+          <img src="assets/icon/Breads & Buns.svg">
+          <p text-wrap>Breads & Buns</p>
+        </ion-slide>
+        <ion-slide (click)="product('Eggs','Eggs')">
+          <img src="assets/icon/Eggs.svg">
+          <p text-wrap>Eggs</p>
+        </ion-slide>
+      </ion-slides>
+      <!-- </ion-col>
+        <ion-col col-1> -->
+      <!-- <ion-icon name="ios-arrow-forward-outline" class="btnNext" (click)="next1()"></ion-icon> -->
+      <!-- </ion-col>  *ngIf="currentIndex < slides.length-1" -->
+    </ion-row>
+    <!-- <button float-left ion-button clear color="primary" class="btnPrev" (click)="prev()"> -->
+    <!-- </button> float-left -->
+    <!-- <button float-right ion-button clear color="primary" class="btnNext" (click)="next()"> -->
+    <!-- </button>  float-right-->
+
+  </ion-item>
+  <ion-item no-margin no-padding>
+    <h5 text-center>
+      <b>Beauty</b>
+    </h5>
+
+    <ion-row>
+      <ion-slides pager="true" spaceBetween="4" class="category" slidesPerView="3.5">
+        <ion-slide (click)="product('Bath_Face_Hand_Wash','Bath, Face & Hand Wash')">
+          <img src="assets/icon/Bath, Face & Hand Wash.svg">
+          <p text-wrap>Bath, Face & Hand Wash</p>
+        </ion-slide>
+        <ion-slide (click)="product('Feminine_Hygiene','Feminine Hygiene')">
+          <img src="assets/icon/Feminine Hygiene.svg">
+          <p text-wrap>Feminine Hygiene</p>
+        </ion-slide>
+        <ion-slide (click)="product('Oral_Care','Oral Care')">
+          <img src="assets/icon/Oral Care.svg">
+          <p text-wrap>Oral Care</p>
+        </ion-slide>
+        <ion-slide (click)="product('Skin_Care','Skin Care')">
+          <img src="assets/icon/Skin Care.svg">
+          <p text-wrap>Skin Care</p>
+        </ion-slide>
+        <ion-slide (click)="product('Hair_Care','Hair Care')">
+          <img src="assets/icon/Hair Care.svg">
+          <p text-wrap>Hair Care</p>
+        </ion-slide>
+        <ion-slide (click)="product('Health_Medicine','Health & Medicine')">
+          <img src="assets/icon/Health & Medicine.svg">
+          <p text-wrap>Health & Medicine</p>
+        </ion-slide>
+        <ion-slide (click)="product('Mens_Grooming','Mens Grooming')">
+          <img src="assets/icon/Mens Grooming.svg">
+          <p text-wrap>Mens Grooming</p>
+        </ion-slide>
+        <ion-slide (click)="product('Deodorant_Fragrance','Deodorant & Fragrance')">
+          <img src="assets/icon/Deodorant & Fragrance.svg">
+          <p text-wrap>Deodorant & Fragrance</p>
+        </ion-slide>
+        <ion-slide (click)="product('Makeup','Makeup')">
+          <img src="assets/icon/Makeup.svg">
+          <p text-wrap>Makeup</p>
+        </ion-slide>
+        <ion-slide (click)="product('Baby_Toiletries','Baby Toiletries')">
+          <img src="assets/icon/Baby Toiletries.svg">
+          <p text-wrap>Baby Toiletries</p>
+        </ion-slide>
+        <ion-slide (click)="product('Baby_Diapers_Wipes','Baby Diapers & Wipes')">
+          <img src="assets/icon/Baby Diapers & Wipes.svg">
+          <p text-wrap>Baby Diapers & Wipes</p>
+        </ion-slide>
+        <ion-slide (click)="product('Baby_Accessories','Baby Accessories')">
+          <img src="assets/icon/Baby Accessories.svg">
+          <p text-wrap>Baby Accessories</p>
+        </ion-slide>
+      </ion-slides>
+      <!-- <ion-icon name="ios-arrow-forward-outline" class="btnNext" (click)="next()"></ion-icon> -->
+    </ion-row>
+  </ion-item>
+  <ion-item no-margin no-padding>
+    <h5 text-center>
+      <b>Food Grain</b>
+    </h5>
+    <ion-row>
+      <ion-slides pager="true" spaceBetween="4" class="category" slidesPerView="3.5">
+        <ion-slide (click)="product('Salt_Sugar_Jaggery','Salt, Sugar & Jaggery')">
+          <img src="assets/icon/Salt, Sugar & Jaggery.svg">
+          <p text-wrap>Salt, Sugar & Jaggery</p>
+        </ion-slide>
+        <ion-slide (click)="product('Salt_Sugar_Jaggery','Rice & Rice Products')">
+          <img src="assets/icon/Rice & Rice Products.svg">
+          <p text-wrap>Rice & Rice Products</p>
+        </ion-slide>
+        <ion-slide (click)="product('Masalas_Spices','Masalas & Spices')">
+          <img src="assets/icon/Masalas & Spices.svg">
+          <p text-wrap>Masalas & Spices</p>
+        </ion-slide>
+        <ion-slide (click)="product('Dry_Fruits','Dry Fruits')">
+          <img src="assets/icon/Dry Fruits.svg">
+          <p text-wrap>Dry Fruits</p>
+        </ion-slide>
+         <ion-slide (click)="product('Atta_Flours_Sooji','Atta, Flours & Sooji')">
+          <img src="assets/icon/Atta, Flours & Sooji.svg">
+          <p text-wrap>Atta, Flours & Sooji</p>
+        </ion-slide>
+        <ion-slide (click)="product('Dals_Pulses','Dals & Pulses')">
+          <img src="assets/icon/Dals & Pulses.svg">
+          <p text-wrap>Dals & Pulses</p>
+        </ion-slide>
+        <ion-slide (click)="product('Edible_Oils_Ghee','Edible Oils & Ghee')">
+          <img src="assets/icon/Edible Oils & Ghee.svg">
+          <p text-wrap>Edible Oils & Ghee</p>
+        </ion-slide>
+        <ion-slide (click)="product('Organic_Staples','Organic Staples')">
+          <img src="assets/icon/Organic Staples.svg">
+          <p text-wrap>Organic Staples</p>
+        </ion-slide>
+        <ion-slide (click)="product('Oils_Vinegar','Oils & Vinegar')">
+          <img src="assets/icon/Oils & Vinegar.svg">
+          <p text-wrap>Oils & Vinegar</p>
+        </ion-slide>
+      </ion-slides>
+      <!-- <ion-icon name="ios-arrow-forward-outline" class="btnNext" (click)="next()"></ion-icon> -->
+    </ion-row>
+  </ion-item>
+  <ion-item no-margin no-padding>
+    <h5 text-center>
+      <b>Beverages</b>
+    </h5>
+    <ion-row>
+      <ion-slides pager="true" spaceBetween="4" class="category" slidesPerView="3.5">
+        <ion-slide (click)="product('Tea','Tea')">
+          <img src="assets/icon/Tea.svg">
+          <p text-wrap>Tea</p>
+        </ion-slide>
+        <ion-slide (click)="product('Fruit_Juices_Drinks','Fruit Juices & Drinks')">
+          <img src="assets/icon/Fruit Juices & Drinks.svg">
+          <p text-wrap>Fruit Juices & Drinks</p>
+        </ion-slide>
+        <ion-slide (click)="product('Health_Drink_Supplement','Health Drink, Supplement')">
+          <img src="assets/icon/Health Drink, Supplement.svg">
+          <p text-wrap>Health Drink, Supplement</p>
+        </ion-slide>
+        <ion-slide (click)="product('Energy_Soft_Drinks','Energy & Soft Drinks')">
+          <img src="assets/icon/Energy & Soft Drinks.svg">
+          <p text-wrap>Energy & Soft Drinks</p>
+        </ion-slide>
+        <ion-slide (click)="product('Coffee','Coffee')">
+          <img src="assets/icon/Coffee.svg">
+          <p text-wrap>Coffee</p>
+        </ion-slide>
+        <ion-slide (click)="product('Water','Water')">
+          <img src="assets/icon/Water.svg">
+          <p text-wrap>Water</p>
+        </ion-slide>
+      </ion-slides>
+      <!-- <ion-icon name="ios-arrow-forward-outline" class="btnNext" (click)="next()"></ion-icon> -->
+    </ion-row>
+  </ion-item>
+  <ion-item no-margin no-padding>
+    <h5 text-center>
+      <b>Gourmet & World Food</b>
+    </h5>
+    <ion-row>
+      <ion-slides pager="true" spaceBetween="4" class="category" slidesPerView="3.5">
+        <ion-slide (click)="product('Chocolates_Biscuits','Chocolates & Biscuits')">
+          <img src="assets/icon/Chocolates & Biscuits.svg">
+          <p text-wrap>Chocolates & Biscuits</p>
+        </ion-slide>
+        <ion-slide (click)="product('Snacks_Dry_Fruits_Nuts','Snacks, Dry Fruits, Nuts')">
+          <img src="assets/icon/Snacks, Dry Fruits, Nuts.svg">
+          <p text-wrap>Snacks, Dry Fruits, Nuts</p>
+        </ion-slide>
+        <ion-slide (click)="product('Tinned_Processed_Food','Tinned & Processed Food')">
+          <img src="assets/icon/Tinned & Processed Food.svg">
+          <p text-wrap>Tinned & Processed Food</p>
+        </ion-slide>
+        <ion-slide (click)="product('Pasta_Soup_Noodles','Pasta, Soup & Noodles')">
+          <img src="assets/icon/Pasta, Soup & Noodles.svg">
+          <p text-wrap>Pasta, Soup & Noodles</p>
+        </ion-slide>
+        <ion-slide (click)="product('Cooking_Baking_Needs','Cooking & Baking Needs')">
+          <img src="assets/icon/Cooking & Baking Needs.svg">
+          <p text-wrap>Cooking & Baking Needs</p>
+        </ion-slide>
+        <ion-slide (click)="product('Cereals_Breakfast','Cereals & Breakfast')">
+          <img src="assets/icon/Cereals & Breakfast.svg">
+          <p text-wrap>Cereals & Breakfast</p>
+        </ion-slide>
+        <ion-slide (click)="product('Baby_Food_Formula','Baby Food & Formula')">
+          <img src="assets/icon/Baby Food & Formula.svg">
+          <p text-wrap>Baby Food & Formula</p>
+        </ion-slide>
+        <ion-slide (click)="product('Ready_To_Cook_Eat','Ready To Cook & Eat')">
+          <img src="assets/icon/Ready To Cook & Eat.svg">
+          <p text-wrap>Ready To Cook & Eat</p>
+        </ion-slide>
+        <ion-slide (click)="product('Spreads_Sauces_Ketchup','Spreads, Sauces, Ketchup')">
+          <img src="assets/icon/Spreads, Sauces, Ketchup.svg">
+          <p text-wrap>Spreads, Sauces, Ketchup</p>
+        </ion-slide>
+      </ion-slides>
+      <!-- <ion-icon name="ios-arrow-forward-outline" class="btnNext" (click)="next()"></ion-icon> -->
+    </ion-row>
+  </ion-item>
+  <ion-item no-margin no-padding>
+    <h5 text-center>
+      <b>Kitchen</b>
+    </h5>
+    <ion-row>
+      <ion-slides pager="true" spaceBetween="4" class="category" slidesPerView="3.5">
+        <ion-slide (click)="product('Appliances_Electricals','Appliances & Electricals')">
+          <img src="assets/icon/Appliances & Electricals.svg">
+          <p text-wrap>Appliances & Electricals</p>
+        </ion-slide>
+        <ion-slide (click)="product('Crockery_Cutlery','Crockery & Cutlery')">
+          <img src="assets/icon/Crockery & Cutlery.svg">
+          <p text-wrap>Crockery & Cutlery</p>
+        </ion-slide>
+        <ion-slide (click)="product('Pet_Food_Accessories','Pet Food & Accessories')">
+          <img src="assets/icon/Pet Food & Accessories.svg">
+          <p text-wrap>Pet Food & Accessories</p>
+        </ion-slide>
+        <ion-slide (click)="product('Cookware_Non_Stick','Cookware & Non Stick')">
+          <img src="assets/icon/Cookware & Non Stick.svg">
+          <p text-wrap>Cookware & Non Stick</p>
+        </ion-slide>
+        <ion-slide (click)="product('Storage_Accessories','Storage & Accessories')">
+          <img src="assets/icon/Storage & Accessories.svg">
+          <p text-wrap>Storage & Accessories</p>
+        </ion-slide>
+        <ion-slide (click)="product('Kitchen_Accessories','Kitchen Accessories')">
+          <img src="assets/icon/Kitchen Accessories.svg">
+          <p text-wrap>Kitchen Accessories</p>
+        </ion-slide>
+        <ion-slide (click)="product('Gardening','Gardening')">
+          <img src="assets/icon/Gardening.svg">
+          <p text-wrap>Gardening</p>
+        </ion-slide>
+        <ion-slide (click)="product('Bakeware','Bakeware')">
+          <img src="assets/icon/Bakeware.svg">
+          <p text-wrap>Bakeware</p>
+        </ion-slide>
+        <ion-slide (click)="product('Steel_Utensils','Steel Utensils')">
+          <img src="assets/icon/Steel Utensils.svg">
+          <p text-wrap>Steel Utensils</p>
+        </ion-slide>
+        <ion-slide (click)="product('Flask_Casserole','Flask & Casserole')">
+          <img src="assets/icon/Flask & Casserole.svg">
+          <p text-wrap>Flask & Casserole</p>
+        </ion-slide>
+        <ion-slide (click)="product('Baby_Products','Baby Products')">
+          <img src="assets/icon/Baby Products.svg">
+          <p text-wrap>Baby Products</p>
+        </ion-slide>
+      </ion-slides>
+      <!-- <ion-icon name="ios-arrow-forward-outline" class="btnNext" (click)="next()"></ion-icon> -->
+    </ion-row>
+  </ion-item>
+
+  <ion-item no-margin no-padding>
+    <h5 text-center>
+      <b>Cleaning & Household</b>
+    </h5>
+    <ion-row>
+      <ion-slides pager="true" spaceBetween="4" class="category" slidesPerView="3.5">
+        <ion-slide (click)="product('Disposables_Garbage_Bag','Disposables, Garbage Bag')">
+          <img src="assets/icon/Disposables, Garbage Bag.svg">
+          <p text-wrap>Disposables, Garbage Bag</p>
+        </ion-slide>
+        <ion-slide (click)="product('Detergents_Dishwash','Detergents & Dishwash')">
+          <img src="assets/icon/Detergents & Dishwash.svg">
+          <p text-wrap>Detergents & Dishwash</p>
+        </ion-slide>
+        <ion-slide (click)="product('Fresheners_Repellents','Fresheners & Repellents')">
+          <img src="assets/icon/Fresheners & Repellents.svg">
+          <p text-wrap>Fresheners & Repellents</p>
+        </ion-slide>
+        <ion-slide (click)="product('All_Purpose_Cleaners','All Purpose Cleaners')">
+          <img src="assets/icon/All Purpose Cleaners.svg">
+          <p text-wrap>All Purpose Cleaners</p>
+        </ion-slide>
+        <ion-slide (click)="product('Mops_Brushes_Scrubs','Mops, Brushes & Scrubs')">
+          <img src="assets/icon/Mops, Brushes & Scrubs.svg">
+          <p text-wrap>Mops, Brushes & Scrubs</p>
+        </ion-slide>
+        <ion-slide (click)="product('Pooja_Needs','Pooja Needs')">
+          <img src="assets/icon/Pooja Needs.svg">
+          <p text-wrap>Pooja Needs</p>
+        </ion-slide>
+        <ion-slide (click)="product('Stationery','Stationery')">
+          <img src="assets/icon/Stationery.svg">
+          <p text-wrap>Stationery</p>
+        </ion-slide>
+      </ion-slides>
+      <!-- <ion-icon name="ios-arrow-forward-outline" class="btnNext" (click)="next()"></ion-icon> -->
+    </ion-row>
+  </ion-item>
+  <ion-item no-margin no-padding>
+    <h5 text-center>
+      <b>Fruits & Vegetables</b>
+    </h5>
+    <ion-row>
+      <ion-slides pager="true" spaceBetween="4" class="category" slidesPerView="3.5">
+        <ion-slide (click)="product('Fresh_Vegetables','Fresh Vegetables')">
+          <img src="assets/icon/Fresh Vegetables.svg">
+          <p text-wrap>Fresh Vegetables</p>
+        </ion-slide>
+        <ion-slide (click)="product('Exotic_Fruits_Veggies','Exotic Fruits & Veggies')">
+          <img src="assets/icon/Exotic Fruits & Veggies.svg">
+          <p text-wrap>Exotic Fruits & Veggies</p>
+        </ion-slide>
+        <ion-slide (click)="product('Cuts_Sprouts','Cuts & Sprouts')">
+          <img src="assets/icon/Cuts & Sprouts.svg">
+          <p text-wrap>Cuts & Sprouts</p>
+        </ion-slide>
+        <ion-slide (click)="product('Herbs_Seasonings','Herbs & Seasonings')">
+          <img src="assets/icon/Herbs & Seasonings.svg">
+          <p text-wrap>Herbs & Seasonings</p>
+        </ion-slide>
+        <ion-slide (click)="product('Fresh_Fruits','Fresh Fruits')">
+          <img src="assets/icon/Fresh Fruits.svg">
+          <p text-wrap>Fresh Fruits</p>
+        </ion-slide>
+        <ion-slide (click)="product('Organic_Fruits_Vegetables','Organic Fruits & Vegetables')">
+          <img src="assets/icon/Organic Fruits & Vegetables.svg">
+          <p text-wrap>Organic Fruits & Vegetables</p>
+        </ion-slide>
+        <ion-slide (click)="product('Flower_Bouquets_Bunches','Flower Bouquets, Bunches')">
+          <img src="assets/icon/Flower Bouquets, Bunches.svg">
+          <p text-wrap>Flower Bouquets, Bunches</p>
+        </ion-slide>
+      </ion-slides>
+      <!-- <ion-icon name="ios-arrow-forward-outline" class="btnNext" (click)="next()"></ion-icon> -->
+    </ion-row>
+  </ion-item>
+</ion-content>

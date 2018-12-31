@@ -32,14 +32,108 @@ $app-direction: ltr;
 // to match your app's branding. Ionic uses a Sass map of
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
+$red        : #F44336;
+$pink       : #E91E63;
+$purple     : #9C27B0;
+$d-purple   : #673AB7;
+$indigo     : #3F51B5;
+$blue       : #2196F3;
+$l-blue     : #03A9F4;
+$cyan       : #00BCD4;
+$teal       : #009688;
+$green      : #4CAF50;
+$l-green    : #8BC34A;
+$lime       : #CDDC39;
+$yellow     : #FFEB3B;
+$amber      : #FFC107;
+$orange     : #FF9800;
+$d-orange   : #FF5722;
+$brown      : #795548;
+$blue-grey  : #607D8B;
+$coban      : #11c99f;
+$lama       : #d0eeaa;
+$datroi     : #a1e3e2;
+$grey       : #e4e4e4;
+$tim        : #957eed;
+$lanon      : #cef9c0;
+$hong       : #fcb7be;
+$lot        : #eaf8f8;
+$phan       : #faecfd;
+
+
+
+$theme-color-1: #488aff; //#f4493c
+$theme-color-2: #488aff;
+$theme-color-3: #0c0101;
+$theme-color-4: #0099ff;
+$white: #FFFFFF;
+$white-a: darken($white, 3%);
+$white-b: darken($white, 6%);
+$white-c: darken($white, 12%);
+$white-d: darken($white, 24%);
+
+$black: rgba(#000000, .8);
+$black-a: lighten($black, 10%);
+$black-b: lighten($black, 20%);
+$black-c: lighten($black, 40%);
+$black-d: lighten($black, 60%);
+$menu-width:250px;
+
+
 
 $colors: (
   primary:    #488aff,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+
+  button-color:#4285F4,
+  header:(
+    base: $theme-color-1,
+    contrast: $white
+  ),
+  header-alt:(
+    base: $theme-color-1,
+    contrast: $white
+  ),
+  background:(
+    base: $white-a,
+    contrast: $black-b
+  ), 
+  walkthrough:(
+    base: $blue,
+    contrast: $theme-color-2
+  ),
+  walkthrough-alt:(
+    base: $purple,
+    contrast: $theme-color-2
+  ),
+  walkthrough-last:(
+    base: $green,
+    contrast: $theme-color-2
+  ),
+ walkthrough-header:(
+    base: transparent,
+    contrast: $white
+  ),
+  button:(
+    base: $theme-color-1,
+    contrast: $white
+  ),
+  button-alt:(
+    base: $black,
+    contrast: $white
+  ),
+  tabs-navigation:(
+    base: $white,
+    contrast: $white-d
+  )
 );
+
+
+
+
 
 
 // App iOS Variables
@@ -52,7 +146,9 @@ $colors: (
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
-
+// $text-input-highlight-color-invalid:transparent;
+// $text-input-highlight-color-valid:transparent;
+// $text-input-md-show-focus-highlight:false;
 
 
 

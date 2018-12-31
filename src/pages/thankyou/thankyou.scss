@@ -1,0 +1,26 @@
+page-thankyou {
+
+
+    
+    .submit-button
+    {
+    font-weight: 500;
+    color: white;
+    // background-color: $theme-color-3;
+    // align-items: center !important;
+     .button-inner
+      {
+         text-align: justify;
+     }
+    }
+    ion-content{
+        top: 15%;
+    }
+    img 
+    {
+        margin-top:20%;
+        background-color: transparent;
+        display: block;
+        margin: 0 auto;
+    }
+}

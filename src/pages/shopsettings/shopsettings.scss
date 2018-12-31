@@ -1,0 +1,82 @@
+page-shopsettings {
+    ion-item {
+        border-radius: 30px !important;
+        padding-left: 30px !important;
+        font-size: 0.9em;
+        background-color:rgba(175, 175, 175, 0.5) !important;
+        // background-color:rgb(255, 255, 255) !important;
+        margin-bottom: 10px !important;
+        border-bottom: 0px !important;
+        color: $black !important;
+    }
+    input::placeholder{
+        color: $white !important;
+    }
+    textarea::placeholder{
+        color: $white !important;
+    }
+		.logo {
+			margin-top: 25px;
+			width: 100px;
+			height: 100px;
+			margin: 20px auto 0;
+			border-radius: 10%;
+			background: url("../assets/images/logo.png") no-repeat;
+			background-size: 100%;
+		  }
+		  .animated
+		  {
+				  animation-duration: 1s;
+				  animation-fill-mode: both;
+		  }
+	  
+		  @keyframes fadeIn {
+		  from {
+			opacity: 0;
+		  }
+		
+		  to {
+			opacity: 1;
+		  }
+		}
+		
+		.fadeIn {
+		  animation-name: fadeIn;
+		}
+		
+		@keyframes fadeInDown {
+		  from {
+			opacity: 0;
+			transform: translate3d(0, -100%, 0);
+		  }
+		
+		  to {
+			opacity: 1;
+			transform: none;
+		  }
+		}
+		
+		.fadeInDown {
+		  animation-name: fadeInDown;
+        }
+        ion-card-header{
+            //  margin-top:15px;
+             background-color:$theme-color-1; //$grey;//
+         }
+         .card{
+            margin: 10px 10px 25px 10px;
+        }
+        .card-header{
+           color:$white;
+           font-weight: 800;
+           padding:8px;
+           
+        }
+        .card-content{
+           padding-top:8px !important;
+
+				}
+				$text-input-highlight-color-invalid:transparent ;
+				$text-input-highlight-color-valid:transparent;
+				$text-input-md-show-focus-highlight:false;
+}

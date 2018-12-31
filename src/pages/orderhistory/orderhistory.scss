@@ -1,0 +1,201 @@
+page-orderhistory {
+    .schedule-list
+    {
+    //   padding: 10px 5px;
+   
+     @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          -webkit-transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
+        }
+        to {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      
+      .fadeInUp {
+        -webkit-animation-name: fadeInUp;
+        animation-name: fadeInUp;
+      }
+     @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+        }
+        to {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      
+      .fadeInLeft {
+        -webkit-animation-name: fadeInLeft;
+        animation-name: fadeInLeft;
+      }
+    .fade-in-item{
+        -webkit-animation: fadeInUp 800ms;
+        animation: fadeInUp 800ms;
+     }
+        .item-md
+        {
+            background-color: #dadada;
+        }
+        .schedule-item
+        {
+            padding: 2px;
+            border: none;
+           
+            .item-inner
+            {
+                border: none;
+                padding: 0px;
+
+                ion-label {
+                    margin: 0px;
+                }
+            }
+          
+            .schedule-date
+            {
+                padding-top: 15px;
+                text-align: center;
+                background-color: #ffffff;
+                border-radius: 5px 0px 0px 5px;
+                border-left: 3px solid $theme-color-4;
+                .schedule-day
+                {
+                    color:$theme-color-3;
+                    border-width: 1px !important;
+                    border-style: solid;
+                    border-color:$theme-color-4 !important;
+                    display: flex;
+                    // margin: auto;
+                    // margin-top: 0;
+                    align-items: center;
+                    justify-content: center;
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    font-size: 2.2rem;
+                    font-weight: 400;
+                }
+
+                .schedule-month
+                {
+                    color:$theme-color-3;
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    padding: 15px 5px 0px 0px;
+                    text-transform: uppercase;
+                }
+
+                .schedule-time
+                {
+                    color:$theme-color-3;
+                    font-size: 1.0rem;
+                    font-weight: 500;
+                }
+            }
+            
+            .schedule-data
+            {
+                border-radius: 0px 5px 5px 0px;
+                background-color: #fff;
+                padding: 12px 14px;
+                border-left: 1px solid $grey;
+                    .item-content
+                    {
+                        flex: 0 0 90%;
+                        max-width: 100%;
+                        padding-right: 5px;
+
+                        .item-title
+                        {
+                            font-size: 1.2rem;
+                            font-weight: 500;
+                            letter-spacing: 0.2px;
+                            color: $theme-color-2;
+                            // margin-bottom: 12px;
+
+                            &.one-line
+                            {
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+                        }
+
+                        .item-description
+                        {
+                            margin-bottom: 4px;
+                            display:flex;
+                            align-items:center;
+                            justify-content:space-between;
+
+                            &:last-child
+                            {
+                                margin: 0px;
+                            }
+
+                            .description-icon
+                            {
+                                color:$theme-color-2;
+                                flex: 0 0 12%;
+                                max-width: 12%;
+                                padding-right: 2px;
+                                font-size: 2.1rem;
+                                text-align: left;
+                            }
+
+                            .description-text
+                            {
+                                flex: 0 0 88%;
+                                max-width: 88%;
+                                padding-left: 9px;
+                                white-space: normal;
+                                font-size: 1.2rem;
+                                line-height: 1.4;
+                                letter-spacing: 0.2px;
+                                color:$theme-color-3;
+
+                                &.one-line
+                                {
+                                  overflow: hidden;
+                                  text-overflow: ellipsis;
+                                  white-space: nowrap;
+                                }
+                            }
+                            .icons
+                            {
+                                width: 24px;
+                                height: 24px;
+                            }
+                            .view{
+                                height:2.0rem;
+                                width: 60%;
+                               font-size: 1.1rem;
+                                // text-transform: lowercase;
+                            }
+                        }
+                    // }
+
+                    .item-icon
+                    {
+                      flex: 0 0 10%;
+                      max-width: 10%;
+                      text-align: right;
+                      color: $theme-color-2;
+                      font-size: 2.2em;
+                      padding-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+}

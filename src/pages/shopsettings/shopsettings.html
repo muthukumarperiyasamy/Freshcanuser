@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Shop Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div class=" animated fadeIn ">
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+    </div>
+  </div>
+  <div>
+    <ion-card>
+      <ion-card-header *ngIf="this.can_shopname !='null'" text-wrap text-center>
+        Your Can Shop:{{can_shopname}}
+      </ion-card-header>
+      <ion-card-header *ngIf="this.can_shopname =='null'" text-wrap text-center>
+        Enter Your Can Shop Number to Order Can
+      </ion-card-header>
+      <ion-card-content>
+        <div *ngIf="this.can_shopmobile1 == 'null' ">
+          <ion-item>
+            <ion-input type="tel" placeholder="Can Shop Number" maxlength="10" [(ngModel)]="this.can_shopmobile"></ion-input>
+          </ion-item>
+          <button ion-button block round class="button" (click)="updatecan()">update can shop</button>
+        </div>
+        <div *ngIf="this.can_shopmobile1 != 'null' ">
+          <ion-item>
+            <!-- <ion-input type="tel" readonly placeholder="Can Shop Number" maxlength="10" [(ngModel)]="this.can_shopmobile"></ion-input> -->
+         <ion-label>{{this.can_shopmobile}}</ion-label>
+          </ion-item>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header *ngIf="this.grocery_shopname !='null'" text-wrap text-center>
+        Your Grocery Shop:{{grocery_shopname}}
+      </ion-card-header>
+      <ion-card-header *ngIf="this.grocery_shopname =='null'" text-wrap text-center>
+        Enter Your Grocery Shop Number to Order Grocery
+      </ion-card-header>
+      <ion-card-content>
+        <div *ngIf="this.grocery_shopmobile1 == 'null'">
+          <button ion-button block round class="button" (click)="updategrocery()">update Grocery shop</button>
+        </div>
+        <div *ngIf="this.grocery_shopmobile1 != 'null'">
+          <ion-item>
+            <!-- <ion-input type="tel" readonly placeholder="Grocery Shop Number" maxlength="10" [(ngModel)]="this.grocery_shopmobile"></ion-input> -->
+         <ion-label>{{this.grocery_shopmobile}}</ion-label>
+        </ion-item>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <!-- <div>
+    <ion-card>
+        <ion-card-header text-center>
+          Your shop:
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-input type="number" placeholder="Can Shop Number" [(ngModel)]="this.shop"></ion-input>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+</div> -->
+</ion-content>

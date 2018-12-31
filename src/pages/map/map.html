@@ -1,0 +1,21 @@
+<ion-header class="terms-header legal-header">
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span showWhen="ios">Cancel</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Google Map
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <h4 *ngIf="this.info == true" style="color:rgb(255, 0, 0)">Make sure Your location is on!!!</h4> -->
+  <div id="map_canvas">
+  </div>
+  <button  *ngIf="this.myloc == undefined"  ion-button block (click)="onButtonClick()">Get my location</button>
+  <button  *ngIf="this.myloc != undefined"  ion-button block (click)="setloc()">set as my home location</button>
+</ion-content>

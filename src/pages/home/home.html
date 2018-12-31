@@ -1,18 +1,77 @@
 <ion-header>
-  <ion-navbar>
+  <ion-toolbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-buttons end>
+      <a ion-button icon-only (click)="logout()">
+        <ion-icon name="md-log-out"></ion-icon>
+      </a>
+    </ion-buttons>
+    <ion-title>Fresh Can & Groceries</ion-title>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content>
+  <!-- <h4>Welcome username, to APPname</h4> -->
+  <ion-slides class="contact-slides" pager="true" autoplay="7000" loop="true">
+    <ion-slide class="contact-slide" *ngFor="let image of images">
+      <!-- <background-image class="slide-image" [src]="image"></background-image> -->
+      <img [src]="image" class="slide-image">
+    </ion-slide>
+  </ion-slides>
+  <ion-item class="contact-details-row" style="padding-left:15px">
+    <ion-row>
+      <ion-col>
+        <h3>Welcome, {{this.username}}</h3>
+      </ion-col>
+      <!-- <ion-col><ion-row> <ion-icon class=" fa fa-hospital-o"></ion-icon> <h3>&nbsp;  {{this.shopname}}</h3></ion-row></ion-col> -->
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+    </ion-row>
+  </ion-item>
+  <ion-row>
+    <ion-col width-60>
+      <div>
+        <img src="./assets/images/bubble.png" height="165" width=100% alt="logo">
+      </div>
+    </ion-col>
+    <ion-col width-40>
+      <div class=text>
+        <!-- <ion-row> <ion-icon class=" fa fa-hospital-o"></ion-icon>  -->
+        <h3>&nbsp; {{this.canshopname}} </h3>
+        <!-- </ion-row> -->
+      </div>
+      <div>
+        <ion-row>
+          <ion-col col-4>
+            <button ion-button icon-only class="qicon" (tap)="tapEvent2($event)">
+              <ion-icon name="ios-remove"></ion-icon>
+            </button>
+            <!-- <ion-icon class="qicon"  name="ios-remove"></ion-icon> -->
+          </ion-col>
+          <ion-col col-4 class="inputnum">
+            <ion-input type="number" [(ngModel)]="this.tap"></ion-input>
+          </ion-col>
+          <ion-col col-4>
+            <button ion-button icon-only class="qicon" (tap)="tapEvent1($event)">
+              <ion-icon name="ios-add"></ion-icon>
+            </button>
+            <!-- <ion-icon class="qicon" (tap)="tapEvent1($event)" name="ios-add"></ion-icon> -->
+          </ion-col>
+        </ion-row>
+        <span class="span" *ngIf="this.costdis == true ">
+          <b> &#8377; {{this.cost}}</b> Per Can</span>
+        <button ion-button block class="submit-button" type="submit" (click)="order()">order now</button>
+      </div>
+    </ion-col>
+  </ion-row>
+  <!-- <ion-item> -->
+  <!-- <ion-item-divider class="divider"></ion-item-divider> -->
+  <ion-thumbnail *ngIf="this.shoptype !='0'" padding (click)="purchasegrocery()">
+    <img src="http://www.freshcangrocery.in/images/Grocery.png" class="gros" height="80" width="100%" alt="grocery">
+    <!-- *********************** image size 380x80******************************* -->
+  </ion-thumbnail>
+  <!-- </ion-item> -->
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <!-- <ion-item-divider class="divider"></ion-item-divider> -->
 </ion-content>

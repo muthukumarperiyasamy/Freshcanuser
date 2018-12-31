@@ -1,0 +1,69 @@
+page-cart {
+    .label-md {
+         margin: 0; 
+    }
+    // .toolbar-background-md{
+    //     background-color: $theme-color-1;
+    // }
+    .item-md ion-avatar[item-left], .item-md ion-thumbnail[item-left], .item-md ion-avatar[item-start], .item-md ion-thumbnail[item-start]{
+        margin:0px 0px 0px 0px;
+    }
+    .item-md [item-left], .item-md [item-right], .item-md [item-start], .item-md [item-end]{
+        margin: 6px 8px 0px 0;
+        
+    }
+    .item-md ion-thumbnail ion-img, .item-md ion-thumbnail img{
+        width: 55px;
+        height: 55px;
+        margin: 5px 0;
+    }
+    .footer-left{
+        line-height: 5px;
+        color:$black;
+    }
+    .prprice{
+        padding-top:15px;
+        padding-left:25px;
+        // color:red
+    }
+
+    .light{
+        line-height: 5px;
+        color:$black;
+    }
+    ion-icon{
+        font-size:1.5em;
+    }
+    .item > ion-icon, .item-inner > ion-icon{
+        font-size:1.2rem;
+    }
+    .zero-margin{
+        // padding-top: 5px;
+        text-align: center;
+        margin:10px 0px 0px 0px;
+    }
+    .delete{
+        padding-top:13px;
+    //   margin:auto;  
+    }
+    .weight{
+        padding-top:5px;
+    }
+    .name{
+        ion-label{
+        background-color: #fff;
+        border-radius: 30px;
+        text-align: center;
+        padding-top:10px;
+        min-height: 38px;
+        }
+        color:#000000;
+        background-color: #e7e7e7;
+    }
+    .item{
+        padding-left :2px;
+    }
+    ion-item{
+        border-bottom: 1px solid $grey !important;
+    }
+}

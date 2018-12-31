@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Order History</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="full">
+  <ion-list class="schedule-list ">
+    <ion-item class=" fade-in-item schedule-item" *ngFor="let item of order ">
+      <!-- (click)="nextpage(item)" -->
+      <ion-row>
+        <ion-col col-2 class="schedule-date">
+
+          <h2 class="schedule-day">{{item.date}}</h2>
+          <h3 class="schedule-month">{{item.month}}</h3>
+          <h3 class="schedule-time">{{item.time}}</h3>
+        </ion-col>
+        <ion-col col-10 class="schedule-data ">
+          <div class="item-content">
+            <div>
+              <ion-row>
+                <ion-col col-6 class="item-description">
+                  <img src="./assets/icons/ticket.png" class="icons">
+                  <!-- <ion-icon class="description-icon fa fa-ticket"></ion-icon> -->
+                  <p class="description-text one-line">{{item.order_id}}</p>
+                </ion-col>
+                <ion-col col-6 class="item-description">
+                  <img src="./assets/icons/shop.png" class="icons">
+                  <!-- <ion-icon class="description-icon" name="contact"></ion-icon> -->
+                  <p class="description-text one-line">{{item.name}}</p>
+                </ion-col>
+              </ion-row>
+            </div>
+            <div>
+              <ion-row>
+                <ion-col col-6 class="item-description">
+                  <img src="./assets/icons/payment.png" class="icons">
+                  <!-- <ion-icon class="description-icon" name="cash"></ion-icon> -->
+                  <p class="description-text one-line">{{item.payment}}</p>
+
+                </ion-col>
+                <ion-col col-6 class="item-description">
+                  <!-- <ion-icon class="description-icon" name="clock"></ion-icon>  class="gros" height="80" width="100%" alt="grocery" -->
+                  <img src="./assets/icons/delivery.png" class="icons">
+                  <p class="description-text one-line">{{ item.delivery_time}}</p>
+                </ion-col>
+              </ion-row>
+            </div>
+            <div>
+              <ion-row>
+                <ion-col col-6 class="item-description">
+                  <img src="./assets/icons/flag.png" class="icons">
+                  <!-- <ion-icon class="description-icon" name="flag"></ion-icon> -->
+                  <p class="description-text one-line"> {{item.status}}</p>
+                </ion-col>
+                <ion-col col-6 class="item-description">
+                  <!-- <ion-icon class="description-icon fa fa-tint"></ion-icon>
+                  <p class="description-text one-line">
+                    <b>{{item.no_of_cans}} Cans</b>
+                    <ion-icon class="description-icon" *ngIf="item.grocery !='null'" (click)="orderpage(item)" name="ios-paper-outline"></ion-icon>
+                    (click)="orderpage(item)" style="padding-left:5px"  
+                  </p> -->
+                  <button ion-button outline small round class="view" (click)="orderpage(item)">View</button>
+                  
+                  <ion-icon *ngIf="item.feedback == 0 && item.status == 'Delivered'"  (click)="nextpage(item)" class="description-icon fa fa-thumbs-o-up"></ion-icon>
+                </ion-col>
+              </ion-row>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+</ion-content>

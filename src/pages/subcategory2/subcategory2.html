@@ -1,0 +1,65 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ this.sbcategory }} </ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="cart()">
+        <ion-icon class="cart" name="cart"></ion-icon>
+        <ion-badge *ngIf="show()" id="notifications-badge" color="danger">{{notification()}}</ion-badge>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="nomsg" *ngIf="this.products.length == 0">
+    <p>No Products to be Displayed</p>
+  </div>
+
+  <div *ngIf="this.products.length != 0">
+    <ion-row>
+      <ion-col>
+        <ion-searchbar [(ngModel)]="terms" class="light-searchbar"></ion-searchbar>
+      </ion-col>
+    </ion-row>
+    <ion-grid no-margin>
+      <ion-row *ngFor="let p of products | search : terms   let i = index">
+        <ion-col col-2>
+          <ion-thumbnail item-start (click)="detail(p)">
+            <img src="{{p.image_url}}">
+          </ion-thumbnail>
+        </ion-col>
+        <ion-col col-5>
+          <h6 style="margin-bottom:0;margin-top:0;margin-left:5px;" text-wrap>{{p.product}}</h6>
+          <button style="height:2.8rem;text-transform:none" ion-button clear color="button-color">
+            <ion-select class="custom-select" #weightSelect (ionChange)="selectCost(p,$event)" [selectOptions]="{title:'Select Weight'}">
+              <ion-option *ngFor="let w of p.unit" [selected]="w.weight === p.weight">{{w.weight}}</ion-option>
+            </ion-select>
+          </button>
+        </ion-col>
+        <ion-col no-padding col-2>
+          <h6 *ngIf="this.responed =='Discount'" class="discountmrp">
+            <s> &#8377; &nbsp;{{p.mrp_price}}</s>
+          </h6>
+          <h6  *ngIf="this.responed =='Discount'"  class="discountmrp">&nbsp;&nbsp;{{p.discount}} %</h6>
+
+        </ion-col>
+        <ion-col col-3>
+          <h6 style="text-align:center;margin-left:25%;"> &#8377;&nbsp;{{p.price}}</h6>
+          <button item-end style="display:inline-flex;margin-left:30%;height:1.8rem;width:2rem;" ion-button small round *ngIf="p.disabled ? hidden : show"
+            (click)="addProduct(p)">{{p.inCart}}</button>
+          <div item-end style="margin-left:30%;margin-top:4px;display:inline-flex;">
+            <!-- margin-top:20px; -->
+            <ion-icon *ngIf="p.disabled" color="button-color" class="icon-size" name="remove-circle" (click)="itemDecrease(p)"></ion-icon>
+            <p *ngIf="p.disabled" item-end class="zero-margin">{{p.item}}</p>
+            <ion-icon *ngIf="p.disabled" color="button-color" class="icon-size" name="add-circle" (click)="itemIncrease(p)"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

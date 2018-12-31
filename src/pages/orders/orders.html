@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Order Details</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content text-center>
+  <!-- <div >
+    <h5>Your have ordered  {{this.can}}  cans</h5>
+  </div> -->
+  <div>
+    <ion-item class="heading">
+      <ion-row>
+        <ion-col col-6>
+          <b>Products</b>
+        </ion-col>
+        <ion-col col-2>
+          <b>NOs</b>
+        </ion-col>
+        <ion-col col-4 *ngIf="this.shopprice !='0'">
+          <b>Cost</b>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item *ngIf="this.can !='0'">
+      <ion-row>
+        <ion-col class="details">
+
+          <ion-row>
+            <ion-col col-6 text-wrap>
+              <h4>
+                <b>Water can</b>
+              </h4>
+            </ion-col>
+            <ion-col col-2>
+              <h4>
+                <b>{{this.can}}</b>
+              </h4>
+            </ion-col>
+            <ion-col col-4>
+              <!-- <h4 *ngIf="i.cost != undefined">
+                    <b> &nbsp; &#8377;&nbsp;{{i.cost}}</b>
+                  </h4> -->
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item *ngFor=" let i of order">
+      <ion-row>
+        <ion-col class="details">
+          <h4>
+            <b>{{i.name}}</b>
+          </h4>
+          <ion-row>
+            <ion-col col-6 text-wrap>
+              <h4>Weight:
+                <b>{{i.weight}}</b>
+              </h4>
+            </ion-col>
+            <ion-col col-2>
+              <h4>
+                <b>{{i.quantity}}</b>
+              </h4>
+            </ion-col>
+            <ion-col col-4>
+              <h4 *ngIf="i.cost != undefined">
+                <b> &nbsp; &#8377;&nbsp;{{i.cost}}</b>
+              </h4>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <!-- <ion-col col-2>
+          <ion-item>
+              <ion-input  readonly  style="width: 75px;"type="number" [(ngModel)]="i.cost">&#8377;</ion-input>
+              <ion-input *ngIf="this.type =='new'"style="width: 75px;"type="number" (change)="getmrp(i.cost)" [(ngModel)]="i.cost"></ion-input>
+        </ion-item>
+          <p>sdvldmkd</p>
+        </ion-col> -->
+      </ion-row>
+    </ion-item>
+    <div *ngIf="this.shopprice !='0'">
+      <ion-row>
+        <ion-col *ngIf="this.mrp !='0'">
+          <h5>MRP Price:
+            <b> &nbsp; &#8377;&nbsp;{{mrp}}</b>
+          </h5>
+        </ion-col>
+        <ion-col>
+          <h5>Shop Price:
+            <b> &nbsp; &#8377;&nbsp;{{shopprice}}</b>
+          </h5>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p text-left>Today you Save:
+            <b> &nbsp; &#8377;&nbsp;{{save}}</b>
+          </p>
+        </ion-col>
+        <ion-col>
+          <p text-center>Discount Applied:
+              <b *ngIf="this.discountprice =='-'" > {{discountprice}}</b>
+              <b *ngIf="this.discountprice !='-'" > &nbsp; &#8377;&nbsp;{{discountprice}}</b>
+          </p>
+        </ion-col>
+      </ion-row>
+      <div class="price">
+        <p text-right>Delivery Charge:
+          <b> &nbsp; &#8377;&nbsp;{{deliveryprice}}</b>
+        </p>
+        <h3 text-right>You Pay:
+          <b> &nbsp; &#8377;&nbsp;{{cashcollect}}</b>
+        </h3>
+      </div>
+    </div>
+  </div>
+
+  <ion-thumbnail padding>
+    <img src="http://www.freshcangrocery.in/images/advertisement.png" alt="grocery">
+    <!-- *********************** image size 380x80******************************* -->
+  </ion-thumbnail>
+</ion-content>

@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Connect with Us</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <div class="contact-description">
+    <p>
+      Working hours Mon-Sat 9:30 AM - 9:00 PM
+    </p>
+    <P>We give quick response to your E-mail within a day.</P>
+  </div>
+  <ion-row class="contact-details-row">
+    <ion-col col-8>
+      <h4 class="contact-name">For Advertisement</h4>
+    </ion-col>
+    <ion-col col-4>
+      <ion-icon name="call" (click)="call(8190883938)"></ion-icon>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="contact-details-row">
+    <ion-col col-8>
+      <h4 class="contact-name">To add your shop</h4>
+    </ion-col>
+    <ion-col col-4>
+      <ion-icon name="mail" (click)="addshop()"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <ion-row class="contact-details-row">
+    <ion-col col-8>
+      <h4 class="contact-name">Payment Queries</h4>
+    </ion-col>
+    <ion-col col-4>
+      <ion-icon name="call" (click)="call(8190883938)"></ion-icon>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="contact-details-row">
+    <ion-col col-8>
+      <h4 class="contact-name">General Enquiry</h4>
+    </ion-col>
+    <ion-col col-4>
+      <ion-icon name="mail" (click)="Enquiry()"></ion-icon>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

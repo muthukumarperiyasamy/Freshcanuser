@@ -1,0 +1,99 @@
+page-subcategory2 {
+     .nomsg{
+        p{
+            padding-top:15px !important;
+        }
+        text-align: center;
+        font-size: 1.5rem;
+        border-radius: 15px  !important;
+        background-color:$theme-color-1; 
+        color:#fff;   
+        height:55px;
+        margin: 15px;
+        
+     }
+        .cart{
+            font-size:1.8em;
+            padding-right: 10px;
+        }
+        #notifications-badge {
+            //background-color: color($colors,button-color);
+            background-color: #100444;
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            border-radius: 100%;
+        }
+        .icon-size{
+            font-size:1.9rem;
+        }
+        .zero-margin{
+            margin-top:2px !important;
+            margin-left:8px;
+            margin-right:8px;
+        }
+        .footer-icon{
+            margin-right:10px;
+        }
+        .select-md .select-icon{
+            width:15px;
+        }
+        .custom-select{
+            .select-icon{
+                padding-right:25px;
+                .select-icon-inner{
+                    color:color($colors,primary);
+                }
+            }
+            .select-text{
+                color:color($colors,primary);
+            padding-top:4px;
+            text-align:center;
+            }
+            min-width: 120%;
+            padding-top:25px;
+            margin-top: 5px;
+            margin-left: 5px;
+            padding: 0;
+            height: 23px;
+            border: 1px solid color($colors,button-color);  
+            border-radius:8px;
+        }
+        h6{
+            font-size: 1em;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .discountmrp{
+            font-size: 12px;
+            text-align: center;
+            margin-left: 25%;
+            margin-top:5px;
+            // margin: auto;
+        }
+        ion-searchbar{
+            // min-height: inherit !important;
+            // padding-top: 5px !important;
+            // padding-bottom: 5px !important;
+            background: #ebebeb !important;
+            &.light-searchbar{
+                &.round .searchbar-search-icon{
+                    // background-color: rgb(221, 14, 14) !important;
+        }
+                .searchbar-search-icon, .searchbar-clear-icon{
+                    filter: brightness(-100) !important;
+        }
+                .searchbar-input{
+                    background: rgb(255, 255, 255) !important;
+            border-radius:30px;
+        }
+            }
+        }
+        ion-row{
+            border-bottom:1px solid $grey;
+        }
+        button-inner  {
+            width:2% !important;
+            height: 1% !important;
+        }
+}

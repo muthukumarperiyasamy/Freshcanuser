@@ -1,0 +1,78 @@
+page-subcategory {
+    .h5{
+        font-style: bold;
+        font-weight: 800;
+    }
+    .label-md{
+        margin:0px;
+    }
+    .item-md.item-block .item-inner{
+        // padding-left:10px;
+    }
+    .category{
+        ion-slide{
+            // font-size:5px; 
+            padding-bottom: 25px;
+            padding-left: 5px;
+            padding-top: 5px;
+            img{
+                height:55px;
+                width:55px;
+                // border-radius:5px;
+            }
+        }
+    }
+    .offersimg{
+        height:85px !important;
+        width:85px !important;
+        border-radius:15px;
+        box-shadow: 1px 1px 25px #949496;
+    }
+    .swiper-slide img{
+        height:180px;
+        font-size:5px;
+        width:100%;
+    }
+    ion-slides{
+        margin:0;
+        // height:15%;
+    }
+    .item-md p{
+        font-size:13px;
+        // text-align: left;
+    }
+    .side-logo{
+        font-size:5px;
+    }
+    .titl{
+        margin-top:23px;
+        font-size:5px;
+    }
+    // .btnPrev{
+    //     position: absolute;
+    //     left: 0 !important;
+    // }
+    // .btnNext{
+    //     position: absolute;
+    //     right: 0 !important;
+    //     padding:20px 10px 0px 5px;
+    //     border-radius: 50%;
+    // }
+    .cart{
+        font-size:1.8em;
+        padding-right: 10px;
+    }
+    #notifications-badge {
+        //background-color: color($colors,button-color);
+        background-color: #100444;
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        border-radius: 100%;
+    }
+}
+ion-app [padding], ion-app [padding] .scroll-content
+{
+    padding: 5px;
+    
+}

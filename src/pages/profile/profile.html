@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Profile</ion-title>
+    <!-- <ion-buttons end>
+      <button ion-button (click)="update()">
+        Save
+      </button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="Profile-content">
+        <img src="assets/images/user.png" >
+  <ion-list class="user-data-content">
+
+    <ion-item class="data">
+      <ion-label stacked>Name</ion-label>
+      <ion-input readonly type="text" [(ngModel)]="this.name" placeholder="name"></ion-input>
+    </ion-item>
+    <ion-item class="data">
+      <ion-label stacked>Mobile Number</ion-label>
+      <ion-input readonly type="number" [(ngModel)]="this.usernum" placeholder="Mobile Number"></ion-input>
+    </ion-item>
+    <ion-item class="data">
+      <ion-label stacked>Email</ion-label>
+      <ion-input readonly type="email" [(ngModel)]="this.email" placeholder="Email-id"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Address</ion-label>
+      <ion-textarea rows="4" [(ngModel)]="this.address" type="text" placeholder="Address"></ion-textarea>
+    </ion-item>
+    <ion-item class="data">
+      <ion-label stacked>Land Mark</ion-label>
+      <ion-input readonly type="text" [(ngModel)]="this.landmark" placeholder="Land Mark"></ion-input>
+    </ion-item>
+    <!-- <ion-item class="data">
+      <ion-label stacked>Shop Mobile No</ion-label>
+      <ion-input readonly type="number" [(ngModel)]="this.shopnum" placeholder="Shop Mobile No"></ion-input>
+    </ion-item> -->
+  </ion-list>
+  <button ion-buttons class="button" ion-button full (click)="update()">update profile</button>
+
+</ion-content>

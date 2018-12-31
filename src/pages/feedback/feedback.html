@@ -1,0 +1,53 @@
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>feedback</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content class="main-view">
+  <div class="overlay" (click)="dismiss()"> </div>
+  <ion-scroll class="modal_content" scrollY="true">
+
+    <ion-list>
+      <ion-item class="item-content">
+        <ion-row>
+          <ion-col col-4 class="item-description">
+            <ion-icon class="description-icon fa fa-ticket"></ion-icon>
+            <p class="description-text one-line">{{this.id}}</p>
+          </ion-col>
+          <ion-col col-8 class="item-description">
+            <ion-icon class="description-icon" name="contact"></ion-icon>
+            <p class="description-text one-line">{{this.name}}</p>
+          </ion-col>
+          <!-- <ion-col col-4 class="item-description">
+            <ion-icon class="description-icon fa fa-tint"></ion-icon>
+            <p class="description-text one-line">{{this.cans}} cans</p>
+          </ion-col> -->
+        </ion-row>
+      </ion-item>
+      <ion-item>
+          <ion-label>Your Opinion</ion-label>
+          <ion-select interface="popover" [(ngModel)]="this.Opinion" >
+          <!-- [(ngModel)]="this.deltime" -->
+          <ion-option selected value="Select">Select</ion-option>
+          <ion-option value="Thanks">Thanks</ion-option>
+          <ion-option value="Question">Question</ion-option>
+          <ion-option value="Problem">Problem</ion-option>
+          <ion-option value="Suggestion">Suggestion</ion-option>
+          <!-- <ion-option value=""></ion-option> -->
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Description</ion-label>
+        <ion-textarea rows="3" [(ngModel)]="this.Description" type="text" placeholder="Give your Feed back about this order....."></ion-textarea>
+      </ion-item>
+      <ion-item>
+      <button ion-button block class="submit-button" type="submit" (click)="feedback()">Submit</button>
+    </ion-item>
+    </ion-list>
+  </ion-scroll>
+
+</ion-content>
